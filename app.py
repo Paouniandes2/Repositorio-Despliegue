@@ -22,7 +22,7 @@ app.config.suppress_callback_exceptions = True
 # Load data from csv
 def load_data():
     # Cargar el archivo CSV como DataFrame
-    df = pd.read_csv(r"C:\Users\lenovo\Desktop\Talleres_Despliegue\datos_energia.csv")
+    df = pd.read_csv("/home/ec2-user/Repositorio-Despliegue/datos_energia.csv")
     
     # Mostrar los nombres de las columnas para verificar el encabezado
     print(df.columns)
@@ -252,5 +252,5 @@ def update_output_div(date, hour, proy):
 
 
 # Run the server
-if __name__ == "__main__":
-    app.run_server( host =" 0.0.0.0 ", debug = True )
+if __name__ == "__master__":
+    app.run_server(host='0.0.0.0', port=8050, debug=True)
